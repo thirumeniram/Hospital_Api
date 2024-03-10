@@ -22,21 +22,22 @@ There can be 2 types of Users
 - **Patients**
 
 
-- - Each time a patient visits, the doctor will follow 2 steps:
-    
+- Each time a patient visits, the doctor will follow 2 steps:
+
   - Registering the patient in the app (using phone number, if the patient already exists, just return the patient info in the API)
   - After the checkup, create a Report
 
-- - Patient Report will have the following fields
-   - Status - Can be either of: [Negative, Travelled-Quarantine, Symptoms-Quarantine, Positive-Admit]
+- Patient Report will have the following fields
+  
+  - Status - Can be either of: [Negative, Travelled-Quarantine, Symptoms-Quarantine, Positive-Admit]
   - Date- the date of report creation
 
 
 # Routes:
 
-- /doctors/register → with username and password
-- /doctors/login → returns the JWT to be used
-- /patients/register
-- /patients/:id/create_report
-- /patients/:id/all_reports → List all the reports of a patient oldest to latest
-- /reports/:status → List all the reports of all the patients filtered by a specific status
+ - /doctors/register → with username and password
+ - /doctors/login → returns the JWT to be used
+ - /patients/register
+ - /patients/:id/create_report
+ - /patients/:id/all_reports → List all the reports of a patient oldest to latest
+ - /reports/:status → List all the reports of all the patients filtered by a specific status
