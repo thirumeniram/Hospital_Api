@@ -1,8 +1,8 @@
-#Hospital_Api
+# Hospital_Api
 
 This project is a Hospital API for the doctors of a Hospital which has been allocated for testing and quarantine + well being of COVID-19 patients
 
-#Installation
+# Installation
 
 To run this application on your local machine, please follow these steps:
 
@@ -14,7 +14,7 @@ Start the application using the following command: $ npm  tart
 
 Open the application in your postman app by visiting the following URL: http://localhost:8000
 
-#Features:
+# Features:
 
 There can be 2 types of Users
 
@@ -34,7 +34,7 @@ Status - Can be either of: [Negative, Travelled-Quarantine, Symptoms-Quarantine,
 Date- the date of report creation
 
 
-#Routes:
+# Routes:
 
 /doctors/register → with username and password
 /doctors/login → returns the JWT to be used
