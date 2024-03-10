@@ -1,8 +1,10 @@
 const Doctor = require("../models/doctorModel");
 const jwt = require("jsonwebtoken");
 
+//Function to register a new doctor
 module.exports.registerDoctor = async (req, res, next) => {
   try {
+    //Create a new doctor using the request body
     const doctor = await Doctor.create(req.body);
     res.status(200).json({
       success: true,
@@ -11,13 +13,14 @@ module.exports.registerDoctor = async (req, res, next) => {
   } catch (error) {
     let errorMessage = "Could not create a doctor, internal server error";
     // Check for validation error (error code 11000 is for duplicate key)
-    if (error.name === 'ValidationError') {
-      errorMessage = "Validation error: " + Object.values(error.errors).map(val => val.message).join(', ');
-    } else if (error.code === 11000) {
-      errorMessage = "Duplicate field value entered";
-    } else if (error.name === 'MongoServerError') {
-      errorMessage = "Database error: " + error.message;
-    }
+    // if (error.name === 'ValidationError') 
+    // {
+    //   errorMessage = "Validation error: " + Object.values(error.errors).map(val => val.message).join(', ');
+    // } else if (error.code === 11000) {
+    //   errorMessage = "Duplicate field value entered";
+    // } else if (error.name === 'MongoServerError') {
+    //   errorMessage = "Database error: " + error.message;
+    // }
     console.log(error)
     
     res.status(500).json({
@@ -28,11 +31,15 @@ module.exports.registerDoctor = async (req, res, next) => {
   }
 };
 
+// Function to login a doctor
 module.exports.login = async (req, res, next) => {
   try {
-    const doctor = await Doctor.findOne(req.body); // Changed from find to findOne
+     // Find a doctor that matches the request body
+    const doctor = await Doctor.findOne(req.body);
+    
     if (doctor) {
-      const token = jwt.sign({ id: doctor.id }, process.env.JWT_SECRET || "your_secret_key"); // Ensure payload is an object
+       // If doctor is found, sign a JWT with the doctor's ID
+      const token = jwt.sign({ id: doctor.id },"secret"); 
       res.status(200).json({
         success: true,
         token: token,

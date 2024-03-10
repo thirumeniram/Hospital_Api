@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+//report schema with status and date
 const reportSchema = new mongoose.Schema({
     status: {
       type: String,
@@ -12,24 +13,25 @@ const reportSchema = new mongoose.Schema({
     },
   }, { timestamps: true }); 
   
+  //patient schema with name,phonenumber ,report and doctor
   const patientSchema = new mongoose.Schema({
     name: {
       type: String,
       required: true,
     },
     phone: {
-      type: Number, // Changed to String for reasons mentioned above
+      type: Number,
       required: true,
     
      
     },
-    reports: [reportSchema], // Use the defined reportSchema for reports
+    reports: [reportSchema], 
     doctor: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Doctor",
       required: true,
     },
-  }, { timestamps: true }); // Optionally apply timestamps to the entire patient record
+  }, { timestamps: true }); 
   
   
 

@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+//Doctors's schema with name and password
 const doctorSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -18,8 +19,3 @@ const Doctor = new mongoose.model("Doctor", doctorSchema);
 
 module.exports = Doctor;
 
-//   customId: {
-//     type: String,
-//     unique: true,
-//     default: () => new Date().getTime().toString() 
-//   },

@@ -4,38 +4,19 @@ const JWTStrategy = require("passport-jwt").Strategy;
 const extractJWT = require("passport-jwt").ExtractJwt;
 
 const jwtOptions = {
-  jwtFromRequest: extractJWT.fromAuthHeaderAsBearerToken(),
-  secretOrKey: process.env.JWT_SECRET || "your_secret_key", // Ideally, use an environment variable
+  jwtFromRequest: extractJWT.fromAuthHeaderAsBearerToken(),//Function to extract the JWT from the authorization header
+  secretOrKey: "secret", // The secret key to verify the JWT's signature. 
 };
 
-// passport.use(
-//   new JWTStrategy(jwtOptions, (jwtPayload, done) => {
-//     // Use jwtPayload.id instead of jwtPayload.sub
-//     console.log("JWT Strategy triggered", jwtPayload);
-//     try {
-//       const doctor = await DoctorModel.findById(jwtPayload.id).exec(); // Use async/await
-//       if (doctor) {
-//         // Doctor found
-//         return done(null, doctor);
-//       } else {
-//         // No doctor found with this id
-//         return done(null, false);
-//       }
-//     } catch (err) {
-//       console.error("Error finding doctor:", err);
-//       return done(err, false);
-//     }
-//     });
-//   })
-// );
 
+//Using passport to utilize the JWT Strategy for handling authentication
 passport.use(
     new JWTStrategy(jwtOptions, (jwtPayload, done) => {
       console.log("JWT Strategy triggered", jwtPayload);
-      // Wrap the async logic inside an immediately invoked async function
+     
       (async () => {
         try {
-          const doctor = await DoctorModel.findById(jwtPayload.id).exec(); // Now valid because we're inside an async function
+          const doctor = await DoctorModel.findById(jwtPayload.id).exec(); 
           if (doctor) {
             // Doctor found
             return done(null, doctor);
@@ -47,7 +28,7 @@ passport.use(
           console.error("Error finding doctor:", err);
           return done(err, false);
         }
-      })(); // Immediately invoke the async function
+      })();//Immediately invoking the async function
     })
   );
 module.exports = passport;
