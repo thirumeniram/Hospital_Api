@@ -19,18 +19,23 @@ Open the application in your postman app by visiting the following URL: http://l
 There can be 2 types of Users
 
 - **Doctors**
+
 - **Patients**
 
 
 - Each time a patient visits, the doctor will follow 2 steps:
 
   - Registering the patient in the app (using phone number, if the patient already exists, just return the patient info in the API)
-  - After the checkup, create a Report
+  - After the checkup, creating a Report
 
 - Patient Report will have the following fields
   
   - Status - Can be either of: [Negative, Travelled-Quarantine, Symptoms-Quarantine, Positive-Admit]
   - Date- the date of report creation
+
+- All the reports of a Individual patient
+
+- All the report for a particuler status it can be either of: [Negative, Travelled-Quarantine, Symptoms-Quarantine, Positive-Admit]
 
 
 # Routes:
