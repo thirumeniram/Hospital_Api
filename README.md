@@ -38,9 +38,9 @@ Open the application in your postman app by visiting the following URL: http://l
 
 # Routes:
 
- - /doctors/register → with username and password
- - /doctors/login → returns the JWT to be used
- - /patients/register
- - /patients/:id/create_report
- - /patients/:id/all_reports → List all the reports of a patient oldest to latest
- - /reports/:status → List all the reports of all the patients filtered by a specific status
+ - /doctors/register           - for registering a doctor
+ - /doctors/login              - for logging a doctor
+ - /patients/register          - for registering a patient
+ - /patients/:id/create_report - for creating a report for a patient
+ - /patients/:id/all_reports   - for getting all the reports of a individual patient
+ - /reports/:status            - for all the reports for a particular status
