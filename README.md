@@ -1,6 +1,8 @@
-This project is a Hospital an API for the doctors of a Hospital which has been allocated by the govt for testing and quarantine + well being of COVID-19 patients
+#Hospital_Api
 
-Installation
+This project is a Hospital API for the doctors of a Hospital which has been allocated for testing and quarantine + well being of COVID-19 patients
+
+#Installation
 
 To run this application on your local machine, please follow these steps:
 
@@ -8,15 +10,15 @@ Clone this repository using the following command: https://github.com/thirumenir
 
 Install the required dependencies using the following command: $ npm install
 
-Start the application using the following command: $ npm run start
+Start the application using the following command: $ npm  tart
 
 Open the application in your postman app by visiting the following URL: http://localhost:8000
 
-Features:
+#Features:
 
 There can be 2 types of Users
-Doctors
 
+Doctors
 Patients
 
 Doctors can log in
@@ -29,10 +31,10 @@ Patient Report will have the following fields
 Created by doctor
 
 Status - Can be either of: [Negative, Travelled-Quarantine, Symptoms-Quarantine, Positive-Admit]
+Date- the date of report creation
 
-Date
 
-Routes:
+#Routes:
 
 /doctors/register → with username and password
 /doctors/login → returns the JWT to be used
