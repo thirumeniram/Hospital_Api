@@ -16,11 +16,9 @@ Open the application in your postman app by visiting the following URL: http://l
 
 # Features:
 
-There can be 2 types of Users
-
-- **Doctors**
-
-- **Patients**
+- There can be 2 types of Users
+  - **Doctors**
+  - **Patients**
 
 
 - Each time a patient visits, the doctor will follow 2 steps:
