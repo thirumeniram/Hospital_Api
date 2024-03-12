@@ -6,7 +6,7 @@ This project is a Hospital API for the doctors of a Hospital which has been allo
 
 To run this application on your local machine, please follow these steps:
 
-Clone this repository using the following command: https://github.com/thirumeniram/Hospital_Api.git
+Clone this repository : https://github.com/thirumeniram/Hospital_Api.git
 
 Install the required dependencies using the following command: $ npm install
 
